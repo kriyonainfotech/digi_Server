@@ -6,9 +6,9 @@ const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const { Addcategory, getCategories, updateCategory, deleteCategory, getCategoryBycategory, addImageToCategory, Imagedelete, updateimageorder, getTotalTemplateCount, updateCategoryOrder, updatethumbnail, getDummyCategories } = require('../controllers/categoryController');
 
 cloudinary.config({
-  cloud_name: dd7cx04dq,
-  api_key: 372424546616664,
-  api_secret: qFtRjjccwjrVttyOFMR_Xeo9qic,
+  cloud_name: "dd7cx04dq",
+  api_key: "372424546616664",
+  api_secret: "qFtRjjccwjrVttyOFMR_Xeo9qic",
 });
 
 const storage = new CloudinaryStorage({
