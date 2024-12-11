@@ -5,9 +5,9 @@ const cloudinary = require('cloudinary').v2;
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const { Addbanner, getbanner } = require('../controllers/bannerController');
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: dd7cx04dq,
+  api_key: 372424546616664,
+  api_secret: qFtRjjccwjrVttyOFMR_Xeo9qic,
 });
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,

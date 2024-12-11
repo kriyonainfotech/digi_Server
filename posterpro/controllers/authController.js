@@ -7,8 +7,8 @@ const crypto = require('crypto');
 const transporter = nodemailer.createTransport({
   service: 'Gmail', // Update if using a different provider
   auth: {
-    user: process.env.EMAIL, // Your email
-    pass: process.env.EMAIL_PASSWORD // Your email password or app password
+    user: "contact.digiposterpro@gmail.com", // Your email
+    pass: "qchj ngeo lodq jhsx" // Your email password or app password
   }
 });
 const cloudinary = require("cloudinary").v2;
