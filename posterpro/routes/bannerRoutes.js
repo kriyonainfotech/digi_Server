@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const cloudinary = require('cloudinary').v2;
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
-const { Addbanner, getbanner } = require('../controllers/bannerController');
+const { Addbanner, getbanner, deleteBanner } = require('../controllers/bannerController');
 cloudinary.config({
   cloud_name: "dd7cx04dq",
   api_key: "372424546616664",
@@ -24,6 +24,7 @@ const storage = new CloudinaryStorage({
   },
 });
 const upload = multer({ storage: storage });
-router.post('/addbanner',upload.single('banner'),Addbanner)
+router.post('/addbanner',upload.single('bannerImage'),Addbanner)
 router.get('/getBanner',getbanner)
+router.post('/deleteBanner',deleteBanner)
 module.exports = router;
