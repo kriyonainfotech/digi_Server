@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { loginUser, verifyOtp, SentOtp, completeRegistration, forgotPassword, verifyForgotPasswordOtp, resetPassword, isLoggedin, loginUseradmin, CheckAuth, getUserByid, getTotalUserCount, deleteUser, updateSingleField, updateProfilePic, updateUser } = require('../controllers/authController')
+const { loginUser, verifyOtp, SentOtp, completeRegistration, forgotPassword, verifyForgotPasswordOtp, resetPassword, isLoggedin, loginUseradmin, CheckAuth, getUserByid, getTotalUserCount, deleteUser, updateSingleField, updateProfilePic, updateUser, getalluser } = require('../controllers/authController')
 const { IsAuthnticated, ISUser } = require('../middleware/authmiddleware')
 const multer = require('multer')
 const cloudinary = require('cloudinary').v2;
@@ -41,4 +41,5 @@ router.delete('/deleteUser',deleteUser)
 router.post('/updateSingleField',updateSingleField)
 router.post('/updateProfilePic',upload.single('profilePic'),updateProfilePic)
 router.post('/updateUser',upload.single('profilePic'),updateUser)
+router.get('/getalluser',getalluser)
 module.exports = router

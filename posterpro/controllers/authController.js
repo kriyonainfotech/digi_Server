@@ -479,6 +479,20 @@ const updateSingleField = async (req, res) => {
     res.status(500).json({ success: false, message: "Server error" });
   }
 };
+const getalluser = async(req,res) => {
+  try {
+    const users = await UserModel.find({})
+    if (!users) {
+      return res.status(404).send({ success: false, message: "User not found"
+    });
+    }
+    return res.status(200).send({ success: true, message: "User found", users
+    });
+  } catch (error) {
+    console.error("Error updating field:", error);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+}
 module.exports = {
-  SentOtp,loginUser,verifyOtp,completeRegistration,forgotPassword,verifyForgotPasswordOtp,resetPassword,isLoggedin,loginUseradmin,CheckAuth,getUserByid,getTotalUserCount,deleteUser,updateSingleField,updateProfilePic,updateUser
+  SentOtp,loginUser,verifyOtp,completeRegistration,forgotPassword,verifyForgotPasswordOtp,resetPassword,isLoggedin,loginUseradmin,CheckAuth,getUserByid,getTotalUserCount,deleteUser,updateSingleField,updateProfilePic,updateUser,getalluser
 }
